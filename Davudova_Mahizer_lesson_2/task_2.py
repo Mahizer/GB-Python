@@ -27,11 +27,17 @@ def convert_list_in_str(list_in: list) -> str:
         списка, являющегося числом, и дополняет нулём до двух целочисленных разрядов.
         Формирует из списка результирующую строковую переменную и возвращает."""
     # пишите реализацию своей программы здесь
+    new_list = []
+    for i in list_in:
+        for j in i:
+            if j.isdigit():
+                new_list.append(f'"{int(i):02}"')
+                break
+            else:
+                new_list.append(i) 
+                break      
 
-
-            
-
-    str_out = ''
+    str_out = ' '.join(new_list)
     return str_out
 
 
